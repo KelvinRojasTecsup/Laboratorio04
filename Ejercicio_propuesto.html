@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="CSS.css" >
+        <meta charset="utf-8"/>
+        <title>P&aacutegina de cambio</title>
+        <script>
+            function cambia(){
+                var num = parseFloat(document.getElementById("montos").value);
+                if(document.getElementById('montos').value == ''){
+                    alert("Colocar la cantidad en soles")
+                }else if((isNaN(document.getElementById('montos').value))){
+                    alert("Solo colocar valores numéricos")
+                }else{
+                    if(document.getElementById('boton1').checked){
+                            alert("S/."+num+" equivalen a "+(num*0.2693).toFixed(2)+" dólares")
+                        }else{
+                            alert("S/."+num+" equivalen a "+(num*0.2476).toFixed(2)+" euros")    
+            }}}
+        </script>
+    </head>
+    <body>
+        <h1>CASA DE CAMBIO</h1>
+        <h2>Seleccionar moneda a convertir:</h2>
+        <div id="cambio">
+            <div id="izquierda"><input id="boton1" type="radio" name="eleccion" value="opcion1"checked onclick ><p id="Dolar">Dólar</p></div>
+            <div id="derecha"><input id="boton2" type="radio" name="eleccion" value="opcion1" ><p id="Euro">Euro</p></div>
+        </div>
+        <h2>Ingrese monto en S/. :</h2>
+        <div id="monto" ><input type="text" id="montos" /></div>
+        <div id="boton3"><button id="button" type="button" onclick="cambia()">Convertir</button></div>
+    </body>
+</html>
